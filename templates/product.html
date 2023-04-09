@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+
+{{ product.description|truncatewords:155}}
+
+{% endblock %}
+
+{% block title %}
+{% if category %}
+{{ product.name }} -eCart Shoppe
+{% else %}
+see our new collections
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row my_prod_row_class">
+    <div class="mx-auto">
+        <p><a href="{% url 'shop:allProdCat_page' %}">Home</a> | <a
+                href="{{product.category.get_url}}">{{product.category}}</a> | {{product.name}} </p>
+    </div>
+
+</div>
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <div style="min-width: 18rem;">
+                <img class="my_card_img" src="{{product.image.url}}" alt="{{product.name}}" height="200px"
+                    width="240px">
+
+            </div>
+        </div>
+
+        <div class="col-md-6 text-justify">
+            <h1 class="my_prod_title "><strong>{{product.name}}</strong></h1>
+            <p>Rs.{{product.price}}</p>
+            <p class="my_title">Product Description</p>
+
+
+            <p id="txt_area" class="text-truncate d-block">{{product.description}}..</p>
+            <p id="lg-area-over" class="d-none w-=75 h-25 mb-0" style="overflow-y: hidden;">{{product.description}}
+            </p>
+            <span><a class="mt-0" id="rdm" onclick="myFunction()" href="#" role="button">read
+                    more</a></span>
+            <br>
+            {% if product.stock <= 0 %} <p class="text-justify my_prod_text"><b>Out Of Stock</b></p>
+                {% else %}
+                <a href="{% url 'cart_app:add_cart' product.id %}" class="btn btn-outline-primary">Add to cart</a>
+                {% endif %}
+        </div>
+    </div>
+</div>
+<script>
+    function myFunction() {
+        console.log('cliked')
+        var x = document.getElementById('txt_area')
+        var y = document.getElementById('lg-area-over')
+        var my_btn = document.getElementById('rdm')
+        var b = x.classList
+        console.log(b)
+        if (x.classList.contains('d-block')) {
+            console.log(1)
+            x.classList.remove('d-block')
+            x.classList.add('d-none')
+            y.classList.add('d-block')
+            my_btn.innerHTML = "show less.."
+
+
+        }
+        else {
+            console.log(0)
+            x.classList.remove('d-none')
+            x.classList.add('d-block')
+            y.classList.remove('d-block')
+            my_btn.innerHTML = "show more.."
+        }
+
+    }
+</script>
+
+
+
+
+{% endblock content %}

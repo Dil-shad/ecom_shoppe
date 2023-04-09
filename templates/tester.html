@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+ 
+<body>
+  <p class="w-75 h-25" style="overflow-x: scroll;">{{product.description}}</p>
+  <!-- <p id="txt_area" class="text-truncate d-block">{{product.description}}..</p>
+      <p id="lg-area-over" class="d-none w-=75 h-25 " style="overflow-y: scroll;">{{product.description}}</p>
+      <span><a id="rdm" onclick="myFunction()" href="#" role="button">read
+              more</a></span> -->
+              function myFunction() {
+                console.log('cliked')
+                var x = document.getElementById('txt_area')
+                var y = document.getElementById('lg-area-over')
+                var my_btn = document.getElementById('rdm')
+                var b = x.classList
+                console.log(b)
+                if (x.classList.contains('d-block')) {
+                    console.log(1)
+                    x.classList.remove('d-block')
+                    x.classList.add('d-none')
+                    y.classList.add('d-block')
+                    my_btn.innerHTML = "show less.."
+        
+        
+                }
+                else {
+                    console.log(0)
+                    x.classList.remove('d-none')
+                    x.classList.add('d-block')
+                    y.classList.remove('d-block')
+                    my_btn.innerHTML = "show more.."
+                }
+        
+        
+        
+            }
+  <p class="w-75 h-25">Explore new ways to have fun and enjoy the distinctive features that this phone has to offer. The
+    Motorola Edge 30 features a sleek and compact design with a thickness of 6.79 mm and weighing around 155 g which is
+    capable of attracting anyone with its elegance. Furthermore, the fast refresh rate of 144 Hz and a unique pOLED
+    display empowers you to enjoy brilliant visuals. Moreover, this smartphone sports an innovative Snapdragon 778G+ 5G
+    processor that offers a smooth user experience, and this phone also features 6 GB of LPDDR 5 RAM and 128 GB of
+    internal storage, enabling you to enjoy its top-notch performance and appreciate the incredible storage capacity
+    that helps you store all that you want. Additionally, the Motorola Edge 30 sports a Quad-function camera setup with
+    a 50 MP ultra-wide lens and a 50 MP macro lens that help in capturing terrific images with utmost details and
+    impeccable clarity. Also, the 33 W TurboPower feature adapted in the battery of this phone powers up the battery in
+    a short span, thus enhancing your performance.</p>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
